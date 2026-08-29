@@ -47,9 +47,9 @@ def main():
     anio = int(input("Ingrese el año: "))
     
     if verificar_fecha(dia, mes, anio):
-        print("Es válido")
+        print(f"La fecha {dia}/{mes}/{anio} es válida.")
     else:
-        print("Es inválido")
+        print(f"La fecha {dia}/{mes}/{anio} es inválida.")
 
 
 assert verificar_fecha(5, 5, 2020) == True
@@ -59,4 +59,5 @@ assert verificar_fecha(31, 6, 2020) == False
 assert verificar_fecha(29, 2, 2024) == True
 assert verificar_fecha(29, 2, 2023) == False
 
-main()
+if __name__ == "__main__":
+    main()

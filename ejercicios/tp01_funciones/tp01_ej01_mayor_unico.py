@@ -52,5 +52,5 @@ assert mayor_num(8, 5, 7) == 8
 assert mayor_num(2, 5, 5) == -1
 assert mayor_num(3, 3, 2) == -1
 
-
-main()
+if __name__ == "__main__":
+    main()
