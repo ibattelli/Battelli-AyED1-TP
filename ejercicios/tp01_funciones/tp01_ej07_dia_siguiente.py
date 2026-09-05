@@ -123,16 +123,15 @@ def main() -> None:
     while op != "c":
         opciones()
         op = input("\nIngrese la opción que desea ejecutar: ")
-    #punto a
         if op == "a":
             opcion_a()
                 
-            # punto b
         elif op == "b":
             opcion_b()
             
         elif op == "c":
-            print("Adios!")    
+            print("Adios!")
+                
         else:
             print("Opción incorrecta.")
 
