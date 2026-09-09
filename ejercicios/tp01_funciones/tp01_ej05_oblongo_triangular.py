@@ -4,37 +4,15 @@ def opciones() -> None:
     print("a. Número Oblongo")
     print("b. Número Triangular\n")
 
-def oblongo(a: int) -> bool:
-    """ Verifica si el número ingresado es oblongo.
-    Pre: "a" debe ser un entero positivo.
-    Post: Devuelve True si "a" es oblongo, de lo contrario devuelve False.
-    """
-    for i in range(0, a):
-        oblongo = i * (i+1)
-        if oblongo == a:
-            return True
-    return False
+oblongo = lambda n: any(i * (i + 1) == n for i in range(1, n))
+""" Pre: Recibe como parámetro un número entero positivo
+    Post: Devuelve True o False dependiendo de si el numero es oblongo o no
+"""
 
-def triangular(a: int) -> bool:
-    """ Verifica si el número ingresado es triangular
-    Pre: "a" debe ser un entero positivo.
-    Post: Devuelve True si "a" es triangular, de lo contrario devuelve False.
-    """
-    triangular = 0
-    incremento = 0
-    
-    while triangular < a:
-        incremento += 1
-        triangular += incremento
-        if triangular == a:
-            return True
-    return False
-
-assert oblongo(6) == True
-assert oblongo(7) == False
-
-assert triangular(6) == True
-assert triangular(11) == False
+triangular = lambda a: any(sum(range(1, i + 1)) == a for i in range(1, a))
+""" Pre: Recibe como parámetro un número entero positivo
+    Post: Devuelve True o False dependiendo de si el numero es triangular o no
+"""
 
 def main() -> None:
     opciones()
@@ -47,6 +25,12 @@ def main() -> None:
         print(triangular(n))
     else:
         print("Opción incorrecta.")
+
+assert oblongo(6) == True
+assert oblongo(7) == False
+
+assert triangular(6) == True
+assert triangular(11) == False
 
 if __name__ == "__main__":
     main()
