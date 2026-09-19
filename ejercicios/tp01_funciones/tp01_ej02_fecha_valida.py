@@ -41,7 +41,7 @@ def verificar_fecha(d: int, m: int, a:int ) -> bool:
                 return False
          
 
-def main():
+def main() -> None:
     dia = int(input("Ingrese el día: "))
     mes = int(input("Ingrese el mes: "))
     anio = int(input("Ingrese el año: "))

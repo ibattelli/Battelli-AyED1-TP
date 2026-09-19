@@ -23,7 +23,7 @@ def mayor_num(a: int, b: int, c: int) -> int:
             return c
     return -1       
 
-def main():
+def main() -> None:
     primer = int(input("Ingrese el primer número: "))
     while verificar(primer):
         primer = int(input("Reingrese el primer número: "))

@@ -10,7 +10,7 @@ def opciones() -> None:
     print("0. Salir.")
 
 
-def naranjas_vender_jugo(naranjas: int) -> tuple:
+def naranjas_vender_jugo(naranjas: int) -> tuple[int]:
     """ Crea una lista de naranjas y otra de naranjas para jugo
     Pre: naranjas debe ser un número entero mayor o igual a 0
     Post: Retorna una tupla con dos listas
@@ -25,9 +25,9 @@ def naranjas_vender_jugo(naranjas: int) -> tuple:
 
     return lista_naranjas, naranjas_jugos
 
-def cant_cajones(lista_naranjas: list) -> tuple:
+def cant_cajones(lista_naranjas: list[int]) -> tuple[int]:
     """Calcula la cantidad de cajones que se pueden llenar y su sobrante
-    Pre: lista_naranjas debe ser una lista.
+    Pre: lista_naranjas debe ser una lista con numeros enteros.
     Post: Retorna una tupla con la cantidad de cajones y el sobrante
     """
     assert isinstance(lista_naranjas, list), "Deber recibir una lista"
@@ -37,9 +37,9 @@ def cant_cajones(lista_naranjas: list) -> tuple:
     sobrante = cant_naranjas % 100
     return cant_cajones, sobrante
 
-def dividir_reparto(lista_naranjas: list) -> int:
+def dividir_reparto(lista_naranjas: list[int]) -> int:
     """Calcula la cantidad de camiones necesarios para repartir las naranjas
-    Pre: lista_naranjas debe ser una lista.
+    Pre: lista_naranjas debe ser una lista con numeros enteros.
     Post: Retorna un número entero que es la cantidad de camiones necesarios.
     """
     assert isinstance(lista_naranjas, list), "Deber recibir una lista"
@@ -62,8 +62,7 @@ def main() -> None:
 
     lista_n, lista_j = naranjas_vender_jugo(cant_naranjas)
     cajones, sobrante = cant_cajones(lista_n)
-    op = " "
-    while op != "0":
+    while True:
         opciones()
         op = input("\nIngrese la opción que desea ejecutar: ")
         if op == "1":
@@ -77,6 +76,7 @@ def main() -> None:
             print(f"\nPara transportar la consecha se necesitan: {cant_camiones} camiones")
         elif op == "0":
             print("\nAdios!")
+            break
         else:
             print("\nOpción incorrecta")
 

@@ -12,7 +12,7 @@ def bisiesto(anio: int) -> bool:
     """
     return (anio % 4 == 0 and anio % 100 != 0) or (anio % 400 == 0)
 
-def diasiguiente(d: int, m: int, a: int) -> tuple:
+def diasiguiente(d: int, m: int, a: int) -> tuple[int]:
     """ Devuelve la fecha del día siguiente de la fecha ingresada
     Pre: "d, m y a" deben ser enteros positivos
     Post: Devuelve una tupla con "d, m y a" actualizados al día siguiente
@@ -119,8 +119,7 @@ def opcion_b() -> None:
         print("La primera fecha es incorrecta.")
 
 def main() -> None:
-    op = ""
-    while op != "c":
+    while True:
         opciones()
         op = input("\nIngrese la opción que desea ejecutar: ")
         if op == "a":
@@ -131,7 +130,7 @@ def main() -> None:
             
         elif op == "c":
             print("Adios!")
-                
+            break
         else:
             print("Opción incorrecta.")
 

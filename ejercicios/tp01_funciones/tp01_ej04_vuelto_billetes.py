@@ -1,9 +1,7 @@
 def cambio(total: int, recibido: int) -> None:
     """ Calcula e informa la cantidad de billetes necesarios para dar como vuelto.
-
     Pre: El total y recibido deben ser mayores a 0 y deben ser números enteros
     Post: Informa la cantidad de billetes necesarios para dar como vuelto o si no es posible entregar el cambio.
-
     """
     assert total > 0, "El total deber ser mayor a 0"
     assert recibido > 0, "Recibido debe ser mayor a 0"
