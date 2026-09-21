@@ -6,6 +6,10 @@ def lista_ordenada(lista: list) -> bool:
     lista2 = lista.copy()
     lista2.sort()
     return lista == lista2
-lista = ["a", "b", "c"]
 
-print(lista_ordenada(lista))
+def main()-> None:
+    lista = ["a", "b", "c"]
+    print(lista_ordenada(lista))
+
+if __name__ == "__main__":
+    main()

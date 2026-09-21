@@ -7,7 +7,10 @@ def normalizar_lista(lista: list[int]) -> list[float]:
     n = map((lambda valor: valor / suma), lista)
     normalizado = list(n)
     return normalizado
+def main()-> None:
+    lista = [1, 1, 2]
+    normalizado = normalizar_lista(lista)
+    print(normalizado)
 
-lista = [1, 1, 2]
-normalizado = normalizar_lista(lista)
-print(normalizado)
+if __name__ == "__main__":
+    main()
