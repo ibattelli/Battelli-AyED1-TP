@@ -1,14 +1,8 @@
-"""Escribir una función filtrar_palabras() que reciba una cadena de caracteres conte-
-niendo una frase y un entero N, y devuelva otra cadena con las palabras que ten-
-gan N o más caracteres de la cadena original. Escribir también un programa para
-verificar el comportamiento de la misma. Hacer tres versiones de la función, para
-cada uno de los siguientes casos:
-a. Utilizando sólo ciclos normales
-b. Utilizando listas por comprensión
-c. Utilizando la función filter"""
-
-
 def filtrar_palabras(cadena: str, numero: int) -> str:
+    """Recibe una cadena y un numero y retorna las palabras con "numero" o más caracteres
+    Pre: cadena debe ser un string y numero debe ser un número entero
+    Post: retorna un string con las palabras que tengan "numero" o más caracteres
+    """
     palabras = cadena.split(" ")
     filtrado = []
     for palabra in palabras:
@@ -17,12 +11,31 @@ def filtrar_palabras(cadena: str, numero: int) -> str:
     cadena_nueva = "-".join(filtrado)
     return cadena_nueva
 
+def lista_comprension(cadena: str, numero: int) -> str:
+    """Recibe una cadena y un numero y retorna mediante una lista por comprensión las palabras con "numero" o más caracteres
+    Pre: cadena debe ser un string y numero debe ser un número entero
+    Post: retorna un string con las palabras que tengan "numero" o más caracteres
+    """
+    filtrado = [palabra for palabra in cadena.split(" ") if len(palabra) >= numero]
+    return "-".join(filtrado)
+
+
+def lista_filter(cadena: str, numero: int) -> str:
+    """Recibe una cadena y un numero y retorna mediante filter las palabras con "numero" o más caracteres
+    Pre: cadena debe ser un string y numero debe ser un número entero
+    Post: retorna un string con las palabras que tengan "numero" o más caracteres
+    """
+    filtrado = list(filter(lambda palabra: len(palabra) >= numero, cadena.split(" ")))
+    return "-".join(filtrado)
+
+
 def main() -> None:
     cadena = "hola soy estudiante de programación"
-    numero = 3
+    numero = 4
 
-    cadena_nueva = filtrar_palabras(cadena, numero)
-    print(cadena_nueva)
+    print(filtrar_palabras(cadena, numero))
+    print(lista_comprension(cadena, numero))
+    print(filtrar_palabras(cadena, numero))
 
 if __name__ == "__main__":
     main()
